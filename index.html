@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YouTube Thumbnail Downloader</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <p class="logo">▶ YouTube</p>
+      <h1>YOUTUBE THUMBNAIL DOWNLOADER</h1>
+    </div>
+
+    <div class="input-section">
+      <input type="text" id="videoUrl" placeholder="Enter YouTube Video URL">
+      <button onclick="fetchThumbnail()">FETCH</button>
+    </div>
+
+    <div class="instructions">
+      <h2>How to Download HD YouTube Thumbnail</h2>
+      <ol>
+        <li>Copy the YouTube Video Link / URL</li>
+        <li>Paste it in the input field above</li>
+        <li>Click on the "FETCH" button</li>
+        <li>Select the thumbnail quality</li>
+        <li>Download the thumbnail</li>
+      </ol>
+    </div>
+
+    <footer>
+      <p>Made With ❤️ Lucifier.papa 🇮🇳</p>
+    </footer>
+  </div>
+
+  <script>
+    function fetchThumbnail() {
+      const url = document.getElementById("videoUrl").value;
+      const videoId = url.split("v=")[1]?.split("&")[0];
+      if (videoId) {
+        const thumbnailUrl = https://img.youtube.com/vi/${videoId}/maxresdefault.jpg;
+        window.open(thumbnailUrl, "_blank");
+      } else {
+        alert("Please enter a valid YouTube URL.");
+      }
+    }
+  </script>
+
+</body>
+</html>
